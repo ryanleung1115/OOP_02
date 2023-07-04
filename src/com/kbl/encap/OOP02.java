@@ -1,19 +1,25 @@
 package com.kbl.encap;
 
-public class OOP01 {
+public class OOP02 {
     public static void main(String[] args) {
-        Person p = new Person();
-        p.setName("jason");
-        p.setAge(20);
-        p.setSalary(10000);
+        Person2 p = new Person2("jason", 20, 10000);
         System.out.println(p);
     }
 }
 
-class Person {
+class Person2 {
     private String name;
     private int age;
     private double salary;
+
+    public Person2() {
+    }
+
+    public Person2(String name, int age, double salary) {
+        setName(name);
+        setAge(age);
+        setSalary(salary);
+    }
 
     public String getName() {
         return name;
