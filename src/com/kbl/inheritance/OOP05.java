@@ -1,9 +1,12 @@
 package com.kbl.inheritance;
 
+import java.util.Arrays;
+
 public class OOP05 {
     public static void main(String[] args) {
         Sub sub = new Sub();
-        sub.say();
+        System.out.println("====================");
+        Sub sub2 = new Sub("test");
     }
 }
 
@@ -14,7 +17,11 @@ class Base {
     private int n4 = 400;
 
     public Base() {
-        System.out.println("default constructor of base class");
+        System.out.println("Base() constructor of base class");
+    }
+
+    public Base(int num1, int num2) {
+        System.out.println("Base(int num1, int num2) constructor of base class");
     }
 
     public int getN4() {
@@ -48,11 +55,18 @@ class Base {
 
 class Sub extends Base {
     public Sub() {
-        // super();
-        System.out.println("default constructor of sub-class");
+        super();
+        // this("test");
+        System.out.println("Sub() constructor of sub-class");
+    }
+
+    public Sub(String name) {
+        super(1, 2);
+        System.out.println("Sub(String name) constructor of sub-class");
     }
 
     public void say() {
+        // super(1, 2);
         System.out.println(n1);
         System.out.println(n2);
         System.out.println(n3);
